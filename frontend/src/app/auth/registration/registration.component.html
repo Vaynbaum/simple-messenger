@@ -1,0 +1,31 @@
+<div class="main">
+  <mat-card class="card">
+    <mat-card-header class="card-title">
+      <mat-card-title>{{title}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="card-content">
+      <form [formGroup]="form">
+        <mat-form-field class="form-field" *ngFor="let input of inputs" appearance="fill">
+          <mat-label>{{input.label}}</mat-label>
+          <input matInput [type]="input.hide==undefined ?input.type:(input.hide?input.type:'text')"
+            [formControl]="input.formControl" [placeholder]="input.placeholder? input.placeholder: ''">
+          <mat-icon matSuffix *ngIf="input.icon" [fontIcon]="input.icon">
+          </mat-icon>
+          <button *ngIf="input.hide!=undefined" mat-icon-button matSuffix (click)="input.hide = !input.hide"
+            [attr.aria-label]="'Hide password'" [attr.aria-pressed]="input.hide">
+            <mat-icon>{{input.hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          <mat-error *ngIf="input.formControl.invalid && input.formControl.touched">
+            {{ input?.messageError() }}
+          </mat-error>
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <mat-card-actions class="card-actions">
+      <div class="buttons-group">
+        <button (click)="button.click(button.url)" mat-button color="primary">{{button.name}}</button>
+      </div>
+      <button [disabled]="form.invalid" (click)="signup()" mat-raised-button color="primary">{{nameButton}}</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

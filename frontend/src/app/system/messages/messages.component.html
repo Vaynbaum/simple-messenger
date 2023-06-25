@@ -1,0 +1,17 @@
+<div class="container">
+  <mat-card class="block">
+    <mat-card-header class="card-title">
+      <mat-card-title>{{title}}</mat-card-title>
+    </mat-card-header>
+    <mat-list role="list">
+      <ng-container *ngFor="let dialog of dialogs; last as isLast; index as i;">
+        <mat-list-item (click)="openDialog(i)" role="listitem">
+          <img matListItemAvatar [src]="imageService.GetFullURL(dialog.interlocutor.img)">
+          <span matListItemTitle>{{dialog.interlocutor.fullname}}</span>
+          <p matListItemLine>{{dialog.message.text}}</p>
+        </mat-list-item>
+        <mat-divider *ngIf="!isLast"></mat-divider>
+      </ng-container>
+    </mat-list>
+  </mat-card>
+</div>

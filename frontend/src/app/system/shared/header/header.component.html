@@ -1,0 +1,28 @@
+<header class="header">
+  <mat-toolbar color="primary">
+    <h1>{{title}}</h1>
+    <div class="left-group">
+
+      <ng-container *ngIf="!showIcon">
+        <a mat-button (click)="link.click()" *ngFor="let link of links">
+          {{link.name}}
+          <mat-icon>{{link.icon}}</mat-icon>
+        </a>
+      </ng-container>
+      <ng-container *ngIf="showIcon">
+        <a mat-icon-button (click)="link.click()" *ngFor="let link of links">
+          <mat-icon>{{link.icon}}</mat-icon>
+        </a>
+      </ng-container>
+    </div>
+    <div [matMenuTriggerFor]="menuRight" class="right-group">
+      <span class="long-text">{{profile?.fullname}}</span>
+      <img [src]="imageService.GetFullURL(profile?.img)">
+    </div>
+    <mat-menu #menuRight="matMenu">
+      <button (click)="button.click()" *ngFor="let button of rightButtons" mat-menu-item>{{button.name }}<mat-icon>
+          {{button.icon}}</mat-icon>
+      </button>
+    </mat-menu>
+  </mat-toolbar>
+</header>

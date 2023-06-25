@@ -1,0 +1,91 @@
+version: "3.9"
+
+services:
+###################################
+#  set up backend container
+###################################  
+  auth:
+    build: ./backend/auth
+    container_name: auth
+    restart: always
+    env_file: .env
+    ports:
+      - 8000:8000
+    expose:
+      - 8000
+    networks:
+      - microservices
+
+  mailer:
+    build: ./backend/mailer
+    container_name: mailer
+    restart: always
+    env_file: .env
+    ports:
+      - 8001:8000
+    expose:
+      - 8001
+    networks:
+      - microservices
+
+  resource:
+    build: ./backend/resource_server
+    container_name: resource
+    restart: always
+    env_file: .env
+    ports:
+      - 8002:8000
+    expose:
+      - 8002
+    networks:
+      - microservices
+
+  upload_files:
+    build: ./backend/upload_files
+    container_name: upload_files
+    restart: always
+    env_file: .env
+    ports:
+      - 8003:8000
+    expose:
+      - 8003
+    networks:
+      - microservices
+
+  ng:
+    build: ./ng
+    container_name: ng
+    restart: always
+    depends_on:
+      - auth
+      - resource
+      - upload_files
+    volumes:
+      - ./ng/nginx.conf:/etc/nginx.conf
+    ports:
+      - 80:80
+    networks:
+      - microservices
+
+##################################
+#  set up frontend container
+##################################  
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    restart: always
+    ports:
+      - 4200:4200
+    expose:
+      - 4200
+    depends_on:
+      - ng
+      - auth
+      - resource
+      - upload_files
+    networks:
+      - microservices
+
+networks:
+    microservices:
+      driver: bridge

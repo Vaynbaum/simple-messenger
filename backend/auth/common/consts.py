@@ -1,0 +1,8 @@
+ACCESS_TOKEN = "access_token"
+REFRESH_TOKEN = "refresh_token"
+TOKEN_TYPE_BEARER = "Bearer"
+PAYLOAD_NAME_SCOPE = "scope"
+PAYLOAD_NAME_EXPIRES = "exp"
+PAYLOAD_NAME_ISSUEDAT = "iat"
+PAYLOAD_NAME_SUB = "sub"
+NAME_OBJECT_USER = "user"

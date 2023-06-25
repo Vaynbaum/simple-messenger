@@ -1,0 +1,20 @@
+<div class="container">
+  <mat-card class="block">
+    <mat-card-header class="card-title">
+      <mat-card-title>{{title}}</mat-card-title>
+    </mat-card-header>
+    <mat-list role="list">
+      <ng-container *ngFor="let user of users; last as isLast">
+        <mat-list-item (click)="showPage(user?.key)" role="listitem">
+          <img matListItemAvatar [src]="imageService.GetFullURL(user?.img)">
+          <span matListItemTitle>{{user.fullname}}</span>
+          <span matListItemLine>{{user.email}}</span>
+        </mat-list-item>
+        <mat-divider *ngIf="!isLast"></mat-divider>
+      </ng-container>
+    </mat-list>
+
+    <button (click)="buttonMore.click()" *ngIf="toNext" mat-button color="primary">{{buttonMore.name}}<mat-icon>
+        {{buttonMore.icon}}</mat-icon></button>
+  </mat-card>
+</div>

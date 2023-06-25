@@ -1,0 +1,79 @@
+$color-light: #fff;
+$primary-color: var(--mdc-elevated-card-container-color, transparent);
+$secondary-color: #c2185b;
+$main-background-color: #c075703e;
+$card-margin-bottom: 20px;
+$padding: 2rem;
+$border-radius: 5px;
+$column-gap: 10px;
+$row-gap: 20px;
+
+$avatar-img-border-radius: 50%;
+$avatar-img-width: 40px;
+$block-width: min(95%, 350px);
+
+$border-radius: var(
+  --mdc-elevated-card-container-shape,
+  var(--mdc-shape-medium, 4px)
+);
+
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI Regular";
+}
+mat-icon {
+  font-family: "Material Icons" !important;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+button,
+a {
+  font-size: medium;
+}
+@font-face {
+  font-family: "Segoe UI Regular";
+  src: url("assets/fonts/SegoeUI.eot");
+  src: url("assets/fonts/SegoeUI.eot?#iefix") format("embedded-opentype"),
+    url("assets/fonts/SegoeUI.woff") format("woff"),
+    url("assets/fonts/SegoeUI.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+.mat-mdc-form-field-subscript-wrapper {
+  height: 0 !important;
+}
+
+.card-title {
+  color: $color-light !important;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+mat-card {
+  margin-bottom: $card-margin-bottom;
+}
+
+html,
+p,
+h1,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+}
+
+mat-list-item {
+  img,
+  span {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,22 @@
+@import "../../../styles.scss";
+
+.block {
+  width: $block-width;
+}
+
+mat-list-item {
+  cursor: pointer;
+}
+
+.row-item {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  column-gap: $column-gap;
+
+  img {
+    width: $avatar-img-width;
+    border-radius: $avatar-img-border-radius;
+  }
+}

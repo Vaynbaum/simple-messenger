@@ -1,0 +1,52 @@
+@import "./../../styles.scss";
+$card-width: min(95%, 450px);
+
+.main {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("/assets/images/background.jfif") no-repeat center/ cover;
+}
+
+.card {
+  width: $card-width;
+}
+.card-actions,
+.buttons-group {
+  width: 100%;
+  display: flex;
+}
+
+.card-content,
+form,
+.form-field {
+  width: 100%;
+}
+.card-actions {
+  flex-direction: column;
+  row-gap: $row-gap;
+}
+
+.card,
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: $padding;
+}
+@media (min-width: 0px) and (max-width: 400px) {
+  .buttons-group {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (min-width: 400px) {
+  .buttons-group {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

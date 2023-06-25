@@ -1,0 +1,23 @@
+<div class="container profile-container">
+  <mat-card class="profile">
+    <mat-card-header class="card-title profile-title">
+      <mat-card-title>{{profile?.fullname}}</mat-card-title>
+      <mat-card-subtitle>{{profile?.email}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <img (click)="onOpenFileDialog()" [src]="displayImg()">
+      <input [ngStyle]="{'display':'none'}" (change)="fileChange($event)" id="file-input"
+        accept=".jpg, .jpeg, .png, .gif, .bmp" type="file" />
+    </mat-card-content>
+    <mat-card-actions>
+      <button (click)="deleteProfile()" *ngIf="isMyAccount" color="primary" mat-button>
+        <mat-icon>
+          person_remove</mat-icon>Удалить аккаунт
+      </button>
+      <button (click)="openDialog()" *ngIf="!isMyAccount" color="primary" mat-button>
+        <mat-icon>
+          send</mat-icon>Написать
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

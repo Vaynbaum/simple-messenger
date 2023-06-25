@@ -1,0 +1,45 @@
+@import "../../../../styles.scss";
+
+$header-height: 70px;
+$header-z-index: 10;
+
+.header {
+  position: fixed;
+  z-index: $header-z-index;
+  width: 100%;
+  height: $header-height;
+  mat-toolbar {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .left-group,
+    .right-group {
+      display: flex;
+      align-items: center;
+      column-gap: $column-gap;
+    }
+    .right-group {
+      cursor: pointer;
+    }
+  }
+}
+
+img {
+  width: $avatar-img-width;
+  height: $avatar-img-width;
+  cursor: pointer;
+  border-radius: $avatar-img-border-radius;
+}
+
+@media (min-width: 0) {
+  .long-text {
+    display: none;
+  }
+}
+
+@media (min-width: 500px) {
+  .long-text {
+    display: block;
+  }
+}

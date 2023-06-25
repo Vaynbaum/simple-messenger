@@ -1,0 +1,9 @@
+deta
+fastapi
+uvicorn[standard]
+email-validator
+passlib[bcrypt]
+python-jose[cryptography]
+gunicorn
+flower
+requests

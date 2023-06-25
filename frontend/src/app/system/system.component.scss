@@ -1,0 +1,21 @@
+@import "../../styles.scss";
+$content-margin-top: 90px;
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background: $main-background-color;
+}
+
+.content {
+  margin-top: $content-margin-top;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+::ng-deep .menu {
+  background: $secondary-color;
+}

@@ -1,0 +1,55 @@
+@import "../../../styles.scss";
+
+$card-width: min(95%, 700px);
+$card-content-margin-top: 85px;
+$card-content-margin-bottom: 100px;
+$card-actions-z-index: 9;
+$card-actions-margin-bottom: -17px;
+$card-actions-bottom: 25px;
+
+mat-card {
+  position: fixed;
+  color: $color-light;
+  width: $card-width;
+  overflow: scroll;
+  height: 80vh;
+}
+
+mat-card-content {
+  margin-top: $card-content-margin-top;
+  margin-bottom: $card-content-margin-bottom;
+  display: flex;
+  flex-direction: column;
+  row-gap: $row-gap;
+}
+
+.item {
+  width: 100%;
+}
+
+mat-card-header,
+mat-card-actions {
+  margin: 0;
+  background-color: $primary-color;
+  z-index: $card-actions-z-index;
+  width: $card-width;
+  position: fixed;
+  border-radius: $border-radius;
+}
+
+mat-card-header {
+  cursor: pointer;
+}
+
+mat-card-actions {
+  margin-bottom: $card-actions-margin-bottom;
+  bottom: $card-actions-bottom;
+  mat-form-field {
+    width: 100%;
+  }
+
+  textarea {
+    resize: none;
+    overflow: hidden;
+  }
+}

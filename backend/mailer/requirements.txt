@@ -1,0 +1,7 @@
+deta
+fastapi
+uvicorn[standard]
+email-validator
+Jinja2
+gunicorn
+flower

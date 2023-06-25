@@ -1,0 +1,6 @@
+ACCESS_TOKEN = "access_token"
+PAYLOAD_NAME_SCOPE = "scope"
+PAYLOAD_NAME_SUB = "sub"
+NAME_OBJECT_USER = "user"
+NAME_OBJECT_DELETED_USER = "deleted_user"
+NAME_OBJECT_MESSAGE = "msg"

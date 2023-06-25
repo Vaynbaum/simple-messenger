@@ -1,0 +1,24 @@
+<div #card class="container">
+  <mat-card (scroll)="onScroll($event)" id="mat-card">
+    <mat-card-header class="card-title profile-title">
+      <mat-card-title (click)="openProfile(interlocutor?.key)">{{interlocutor?.fullname}}</mat-card-title>
+      <mat-card-subtitle (click)="openProfile(interlocutor?.key)">{{interlocutor?.email}}</mat-card-subtitle>
+      <img (click)="openProfile(interlocutor?.key)" mat-card-avatar [src]="imageService.GetFullURL(interlocutor?.img)">
+    </mat-card-header>
+
+    <mat-card-content>
+      <p [ngStyle]="selectSide(message)" class="item" *ngFor="let message of messages">
+        {{message.text}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <mat-form-field appearance="fill">
+        <textarea id="textarea" (keyup.enter)="sendMsg()" [formControl]="textarea.formControl"
+          [placeholder]="textarea.placeholder" matInput></textarea>
+        <button (click)="sendMsg()" [disabled]="msgCtrl.invalid" mat-icon-button matSuffix>
+          <mat-icon>send</mat-icon>
+        </button>
+      </mat-form-field>
+    </mat-card-actions>
+  </mat-card>
+</div>
