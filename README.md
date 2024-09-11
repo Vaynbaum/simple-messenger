@@ -46,4 +46,4 @@ docker-compose up
 Нажмите на ссылку:
 http://localhost
 
-### During registration, authorization, password recovery, an email sent to a real email can get into SPAM!
+### Во время регистрации, авторизации, восстановления пароля электронное письмо, отправленное на реальный адрес электронной почты, может попасть в СПАМ!
